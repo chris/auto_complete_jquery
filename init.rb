@@ -1,1 +1,1 @@
-ActionController::Base.send :include, AutoCompleteJQuery
+ActionController::Base.send :include, AutoCompleteJquery

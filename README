@@ -11,15 +11,20 @@ those are not needed when using jQuery and Unobtrusive JavaScript.
 
 To use this, you need to have jQuery and the jquery-autocomplete plugin
 mentioned above (as well as that plugin's other jQuery plugin dependencies 
-which are included with it).  Then, there are three aspects of setting up
+which are included with it).  Then, there are four aspects of setting up
 an auto-complete field:
 
 1) Create the text field in your view, which is just a regular form text
 field as you'd create in a Rails erb view:
 
   <%= post.text_field :title, :autocomplete =>"off" %>
+  
+2) Include the appropriate JS files and CSS in your layout or similar:
 
-2) Use the auto_complete_for controller macro to generate the appropriate
+  <%= stylesheet_link_tag 'jquery.ui.autocomplete' %>
+  <%= javascript_include_tag 'jquery.min', 'jquery.dimensions.min', 'jquery.templating', 'jquery.ui.autocomplete.ext', 'jquery.ui.autocomplete', :cache => 'jquery' %>
+
+3) Use the auto_complete_for controller macro to generate the appropriate
 auto-complete method in your controller, such as:
 
   # Controller
@@ -27,7 +32,7 @@ auto-complete method in your controller, such as:
     auto_complete_for :post, :title
   end
 
-3) Hook up the text field's autocomplete event in your JavaScript file
+4) Hook up the text field's autocomplete event in your JavaScript file
 using jQuery and the jquery-autocomplete plugin mechanism, for example:
 
   $(document).ready(function() {
