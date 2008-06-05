@@ -31,13 +31,15 @@ module AutoCompleteJquery
   module ClassMethods
     def auto_complete_for(object, method, options = {})
       define_method("auto_complete_for_#{object}_#{method}") do
+        object_constant = object.to_s.camelize.constantize
         
         find_options = { 
           :conditions => [ "LOWER(#{method}) LIKE ?", '%' + params[:val].downcase + '%' ], 
           :order => "#{method} ASC",
+          :select => "#{object_constant.table_name}.#{method}",
           :limit => 10 }.merge!(options)
         
-        @items = object.to_s.camelize.constantize.find(:all, find_options).collect(&method)
+        @items = object_constant.find(:all, find_options).collect(&method)
 
         render :json => @items.to_json
       end
