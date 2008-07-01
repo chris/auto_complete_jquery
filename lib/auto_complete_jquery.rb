@@ -42,7 +42,7 @@ module AutoCompleteJquery
         
         @items = object_constant.find(:all, find_options).collect(&method)
 
-        render :json => @items.to_json
+        render :text => @items.join("\n")
       end
     end
   end
