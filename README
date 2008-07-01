@@ -1,18 +1,17 @@
 This plugin provides a auto-complete method for your controllers to be used
-with the jquery-autocomplete jQuery plugin.  This jQuery plugin is not
+with Dylan Verheul's jquery autocomplete plugin.  This jQuery plugin is not
 included, and can be obtained from:
 
-http://github.com/ReinH/jquery-autocomplete
+http://www.dyve.net/jquery/?autocomplete
 
 This auto_complete_jquery plugin is just a modified version of the standard
 Rails auto_complete plugin.  It provides the same auto_complete_for method
-for your controllers, but elliminates the various view helper methods, as
+for your controllers, but eliminates the various view helper methods, as
 those are not needed when using jQuery and Unobtrusive JavaScript.
 
-To use this, you need to have jQuery and the jquery-autocomplete plugin
-mentioned above (as well as that plugin's other jQuery plugin dependencies 
-which are included with it).  Then, there are four aspects of setting up
-an auto-complete field:
+To use this, you need to have jQuery and the autocomplete plugin mentioned 
+above (as well as appropriate CSS).  Then, there are four aspects of setting 
+up an auto-complete field:
 
 1) Create the text field in your view, which is just a regular form text
 field as you'd create in a Rails erb view:
@@ -36,7 +35,7 @@ auto-complete method in your controller, such as:
 using jQuery and the jquery-autocomplete plugin mechanism, for example:
 
   $(document).ready(function() {
-    $("input#post_title").autocomplete({ ajax: "auto_complete_for_post_title" })
+    $("input#post_title").autocomplete("auto_complete_for_post_title")
   });
 
 By default, auto_complete_for limits the results to 10 entries,
@@ -49,9 +48,9 @@ the find method used to search for the records:
 
 For more information, see:
 * jQuery site: http://jquery.com
-* jquery-autocomplete plugin home on GitHub: http://github.com/ReinH/jquery-autocomplete
-* jquery-autocomplete plugin home on jQuery site: http://plugins.jquery.com/project/jq-autocomplete
-* Good article on jQuery, Rails, and mention of jquery-autocomplete: http://errtheblog.com/posts/73-the-jskinny-on-jquery
+* Dylan Verheul jquery autocomplete plugin site: http://www.dyve.net/jquery/?autocomplete
+* Good article on jQuery and Rails (note this mentions a different jquery autocomplete 
+  plugin, which was originally used in this plugin): http://errtheblog.com/posts/73-the-jskinny-on-jquery
 * Original Rails auto_complete plugin: http://github.com/rails/auto_complete
 
 
