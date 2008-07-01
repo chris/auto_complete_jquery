@@ -26,15 +26,16 @@ module AutoCompleteJquery
   # For help on defining text input fields with autocompletion, 
   # see ActionView::Helpers::JavaScriptHelper.
   #
-  # For more on jQuery auto-complete, see the jQuery autocomplete plugin for jQuery:
-  # * http://github.com/ReinH/jquery-autocomplete
+  # For more on jQuery auto-complete, see the docs for the jQuery autocomplete 
+  # plugin used in conjunction with this plugin:
+  # * http://www.dyve.net/jquery/?autocomplete
   module ClassMethods
     def auto_complete_for(object, method, options = {})
       define_method("auto_complete_for_#{object}_#{method}") do
         object_constant = object.to_s.camelize.constantize
         
         find_options = { 
-          :conditions => [ "LOWER(#{method}) LIKE ?", '%' + params[:val].downcase + '%' ], 
+          :conditions => [ "LOWER(#{method}) LIKE ?", '%' + params[:q].downcase + '%' ], 
           :order => "#{method} ASC",
           :select => "#{object_constant.table_name}.#{method}",
           :limit => 10 }.merge!(options)
