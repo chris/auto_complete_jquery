@@ -2,7 +2,7 @@ This plugin provides a auto-complete method for your controllers to be used
 with Dylan Verheul's jquery autocomplete plugin.  This jQuery plugin is not
 included, and can be obtained from:
 
-http://www.dyve.net/jquery/?autocomplete
+http://bassistance.de/jquery-plugins/jquery-plugin-autocomplete/
 
 This auto_complete_jquery plugin is just a modified version of the standard
 Rails auto_complete plugin.  It provides the same auto_complete_for method
