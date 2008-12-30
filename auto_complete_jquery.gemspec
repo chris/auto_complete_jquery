@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "auto_complete_jquery"
-  s.version  = "0.1.0"
+  s.version  = "0.1.1"
   s.date     = "2008-12-28"
   s.summary  = "auto-complete method for Rails controllers using Dylan Verheul's jQuery autocomplete plugin"
   s.email    = "chris@cobaltedge.com"
