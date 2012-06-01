@@ -8,11 +8,11 @@ Gem::Specification.new do |s|
   s.description = "This plugin provides a auto-complete method for your controllers to be used with Dylan Verheul's jquery autocomplete plugin."
   s.has_rdoc = true
   s.authors  = ["Chris Bailey"]
-  s.files    = ["CHANGELOG", 
-		"README", 
-		"Rakefile", 
-		"auto_complete_jquery.gemspec", 
-		"init.rb", 
+  s.files    = ["CHANGELOG",
+		"README",
+		"Rakefile",
+		"auto_complete_jquery.gemspec",
+		"init.rb",
 		"lib/auto_complete_jquery.rb"]
   s.rdoc_options = ["--main", "README"]
   s.extra_rdoc_files = ["CHANGELOG", "README"]

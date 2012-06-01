@@ -9,15 +9,15 @@ Rails auto_complete plugin.  It provides the same auto_complete_for method
 for your controllers, but eliminates the various view helper methods, as
 those are not needed when using jQuery and Unobtrusive JavaScript.
 
-To use this, you need to have jQuery and the autocomplete plugin mentioned 
-above (as well as appropriate CSS).  Then, there are four aspects of setting 
+To use this, you need to have jQuery and the autocomplete plugin mentioned
+above (as well as appropriate CSS).  Then, there are four aspects of setting
 up an auto-complete field:
 
 1) Create the text field in your view, which is just a regular form text
 field as you'd create in a Rails erb view:
 
   <%= post.text_field :title, :autocomplete =>"off" %>
-  
+
 2) Include the appropriate JS files and CSS in your layout or similar:
 
   <%= stylesheet_link_tag 'jquery.ui.autocomplete' %>
@@ -49,7 +49,7 @@ the find method used to search for the records:
 For more information, see:
 * jQuery site: http://jquery.com
 * Dylan Verheul jquery autocomplete plugin site: http://www.dyve.net/jquery/?autocomplete
-* Good article on jQuery and Rails (note this mentions a different jquery autocomplete 
+* Good article on jQuery and Rails (note this mentions a different jquery autocomplete
   plugin, which was originally used in this plugin): http://errtheblog.com/posts/73-the-jskinny-on-jquery
 * Original Rails auto_complete plugin: http://github.com/rails/auto_complete
 
